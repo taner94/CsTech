@@ -32,7 +32,7 @@ namespace CsTech
                 z = rastgele.Next(0, 9);
 
                 t = rastgele.Next(0, 9);
-
+                //random kontrolü
             } while ((x != 0) && (x != y) && (x != z) && (x != t) && (y != z) && (y != t) && (z != t));
              sayi =Convert.ToInt32( Convert.ToString(x) + Convert.ToString(y) + Convert.ToString(z) + Convert.ToString(t));
 
@@ -55,7 +55,7 @@ namespace CsTech
                 z = rastgele.Next(0, 9);
 
                 t = rastgele.Next(0, 9);
-
+                //random basamakların farklı olması için kontrol
             } while ((x != 0) && (x != y) && (x != z) && (x != t) && (y != z) && (y != t) && (z != t));
             string sayib =Convert.ToString(x) + Convert.ToString(y) + Convert.ToString(z) + Convert.ToString(t);
          
@@ -72,7 +72,7 @@ namespace CsTech
                 if (array[i] == girilensayi[i])
                 {
                     listBox2.Items.Add((i + 1) + ". Harf Kontrol : +");
-
+                    //dogru bildiğini gösteren uyarı
                     j++;
                     if (j == 4)
                     {
@@ -95,7 +95,7 @@ namespace CsTech
         {
             int j = 0;
 
-
+            //basamak kontrolü
             if (textBox1.Text.Length != 4)
             { MessageBox.Show("4 Basamaklı Sayı Giriş Yapınız!"); }
             else
@@ -107,6 +107,7 @@ namespace CsTech
                 { var randomSayi = sayi; }
 
                 string sayi2 = sayi.ToString();
+                //basamak kontrolü için dizi
                 char[] array = sayi2.ToCharArray();
 
                 char[] girilensayi = textBox1.Text.ToCharArray();
@@ -115,7 +116,7 @@ namespace CsTech
                 {
                     char array2 = array[i];
                     char girilensayi2 = girilensayi[i];
-
+                    //sayi kontrolü
                     if (array[i] == girilensayi[i])
                     {
                         listBox1.Items.Add((i + 1) + ". Harf Kontrol : +");
@@ -144,7 +145,7 @@ namespace CsTech
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            //numerik kontrolü
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox1.Text, "[^0-9]"))
             {
                 MessageBox.Show("Numerik değer giriniz.");
